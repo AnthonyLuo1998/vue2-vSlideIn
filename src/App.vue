@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div v-slide-in="{ direction: 'top' }" class="box"></div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 200vh;
+}
+
+.box {
+  width: 50px;
+  aspect-ratio: 1/1;
+  background-color: blue;
+  position: absolute;
+  bottom: -100px;
+  left: 100px;
 }
 </style>
