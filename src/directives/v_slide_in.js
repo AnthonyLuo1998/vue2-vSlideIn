@@ -2,12 +2,13 @@
 const hashMap = new WeakMap();
 
 // 观察者
-const observe = new IntersectionObserver((els) => {
+const ob = new IntersectionObserver((els) => {
   els.map((el) => {
     if (!el.isIntersecting) return;
     let target;
     if ((target = hashMap.get(el.target))) {
       target.element.animate(...Object.values(generateAnimate(target.config)));
+      ob.unobserve(el.target);
     }
   });
 });
@@ -68,11 +69,11 @@ function vSlideIn(config) {
         element: el,
         config: binding.value,
       });
-      observe.observe(el);
+      ob.observe(el);
     },
     unbind(el) {
       hashMap.delete(el);
-      observe.unobserve(el);
+      ob.unobserve(el);
     },
   };
   return vSlideIn;
