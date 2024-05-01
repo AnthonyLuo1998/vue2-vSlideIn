@@ -17,7 +17,7 @@ const ob = new IntersectionObserver((els) => {
  * @description 构造指令对象
  * @param {{ direction: "top" | "bottom" | "left" | "right", offset: number, duration: number, iterations: number }} config
  */
-function vSlideIn(config) {
+export function vSlideIn(config) {
   // 配置接收的参数类型
   const accessTypes = ["Object", "Undefined"];
   let globalConfigType;
