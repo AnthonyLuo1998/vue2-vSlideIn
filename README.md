@@ -33,7 +33,7 @@ import { vSlideIn } from "./directives/v_slide_in";
 export default {
   name: "App",
   directives: {
-    lazy: vSlideIn(config),
+    slideIn: vSlideIn(config),
   },
 };
 </script>
